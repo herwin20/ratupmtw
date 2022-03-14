@@ -1,6 +1,6 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/benscogr/public_html/
+    - export DEPLOYPATH=/home/benscogr/public_html/rat/
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp dashboard.html $DEPLOYPATH
     - /bin/cp maps.html $DEPLOYPATH
