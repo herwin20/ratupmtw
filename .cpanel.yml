@@ -7,7 +7,6 @@ deployment:
     - /bin/cp changelog.txt $DEPLOYPATH
     - /bin/cp datarat2021.html $DEPLOYPATH
     - /bin/cp Readme.txt $DEPLOYPATH
-    - /bin/cp FINAL DATA RAT KOP 2021.xlsx
-    - /bin/cp -R assetlogin $DEPLOYPATH
-    - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R forms $DEPLOYPATH
+    - /bin/cp -R /home/benscogr/public_html/rat/assetlogin $DEPLOYPATH
+    - /bin/cp -R /home/benscogr/public_html/rat/assets $DEPLOYPATH
+    - /bin/cp -R /home/benscogr/public_html/rat/forms $DEPLOYPATH
