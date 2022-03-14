@@ -1,0 +1,13 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/benscogr/public_html/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp dashboard.html $DEPLOYPATH
+    - /bin/cp maps.html $DEPLOYPATH
+    - /bin/cp changelog.txt $DEPLOYPATH
+    - /bin/cp datarat2021.html $DEPLOYPATH
+    - /bin/cp Readme.txt $DEPLOYPATH
+    - /bin/cp FINAL DATA RAT KOP 2021.xlsx
+    - /bin/cp -R assetlogin $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R forms $DEPLOYPATH
