@@ -48,7 +48,7 @@
   ======================================================== -->
   </head>
 
-  <body oncontextmenu="return false">
+  <body oncontextmenu="returnfalse">
     <!-- ======= Header ======= -->
     <header id="header" class="d-flex align-items-center">
       <div class="container d-flex flex-column align-items-center">
@@ -225,76 +225,49 @@
                 </div>
               </div>
             </div>
+
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
               <div class="row">
                 <div class="col mt-5 mt-lg-0 d-flex align-items-stretch">
-                  <form
-                    action="https://docs.google.com/forms/d/e/1FAIpQLSd31MyRlTVnWGVOTaadBu3I5GHzlPGDZ2TRw9wNNtPvXNueZw/formResponse"
-                    target="_self"
-                    id="bootstrapForm"
-                    method="POST"
-                    class="php-email-form form-lpj"
-                  >
-                    <!-- Field type: "short" id: "517432126" -->
-                    <fieldset>
-                      <legend for="517432126">Nama</legend>
-                      <div class="form-group">
-                        <input id="588911364" type="text" name="entry.588911364" class="form-control" />
-                      </div>
-                    </fieldset>
-
+                  <form name="lpj-rat-2022" class="php-email-form form-lpj">
+                    <div class="form-group col-md-12">
+                      <label for="name">Nama</label>
+                      <input type="text-center" id="namalpj" name="Nama" class="form-control" required />
+                    </div>
                     <div class="row">
-                      <!-- Field type: "dropdown" id: "1946364409" -->
-                      <fieldset class="col-md-6">
-                        <legend for="1946364409">Status</legend>
+                      <div class="form-group col-md-6 mt-3 mt-md-0">
+                        <label for="name">Status</label>
                         <div class="form-group">
-                          <select id="1946364409" name="entry.1722797713" class="form-control">
+                          <select id="status" name="Status" class="form-control">
                             <option value="Pegawai UPMTW">Pegawai UPMTW</option>
                             <option value="Pegawai Non UPMTW">Pegawai Non UPMTW</option>
                             <option value="Pensiunan">Pensiunan</option>
                           </select>
                         </div>
-                      </fieldset>
-
-                      <!-- Field type: "dropdown" id: "1290590447" -->
-                      <fieldset class="col-md-6 mt-3 mt-md-0">
-                        <legend for="1290590447">Menerima Laporan LPJ ?</legend>
+                      </div>
+                      <div class="form-group col-md-6 mt-3 mt-md-0">
+                        <label for="name">Menerima Laporan LPJ ?</label>
                         <div class="form-group">
-                          <select id="1290590447" name="entry.1554233349" class="form-control">
+                          <select id="terima" name="Keputusan" class="form-control">
                             <option value="Ya">Ya</option>
                             <option value="Tidak">Tidak</option>
                           </select>
                         </div>
-                      </fieldset>
-                    </div>
-                    <!-- Field type: "paragraph" id: "430019471" -->
-                    <fieldset>
-                      <legend for="430019471">Tanggapan, Saran, dan Kritik</legend>
-                      <div class="form-group">
-                        <textarea id="1239225965" rows="5" name="entry.1239225965" class="form-control" required></textarea>
                       </div>
-                    </fieldset>
-
-                    <input type="hidden" name="fvv" value="1" />
-                    <input type="hidden" name="fbzx" value="-5051845885500331089" />
-                    <!--
-      CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
-      This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
-      Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
-      We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
-  -->
-                    <input type="hidden" name="pageHistory" value="0" />
-
-                    <div style="padding: 2rem" class="text-center">
-                      <input class="btn btn-primary btn-kirimLPJ" id="btn-kirimLPJ" type="submit" value="Kirim Tanggapan" />
-                      <button class="btn btn-primary d-none btn-loading-lpj" type="btn-new-lpj" disabled>
+                    </div>
+                    <div class="form-group mt-3">
+                      <label for="name">Tanggapan Mengenai LPJ RAT 2022</label>
+                      <textarea class="form-control" name="Saran" rows="5"></textarea>
+                    </div>
+                    <div class="text-center" style="padding: 2rem">
+                      <button class="btn-kirim-lpj" id="btn-kirimLPJ" type="submit">Send Data</button>
+                      <button class="btn btn-primary btn-loading-lpj d-none" type="btn-new-lpj" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Loading...
                       </button>
                     </div>
-
                     <div class="alert alert-success alert-dismissible fade show d-none alert-kirim-lpj" role="alert">
-                      <strong>Terima Kasih !</strong> Data Penerimaan LPJ RAT Koperasi Anda Telah tersimpan
+                      <strong>Terima Kasih !</strong> Tanggapan LPJ Anda telah tersimpan
                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                   </form>
@@ -464,7 +437,7 @@
 
               setTimeout(function () {
                 Swal.fire({
-                  title: "Anda akan di arahkan ke halaman Login",
+                  title: "Anda akan di arahkan ke halaman Daftar Peserta",
                   html: "It will close in <b></b> milliseconds.",
                   timer: 3000,
                   timerProgressBar: true,
@@ -482,7 +455,10 @@
                   },
                   willClose: () => {
                     clearInterval(timerInterval);
-                    setTimeout("location.href='index.html'", 10);
+                    setTimeout(
+                      "location.href='https://script.google.com/macros/s/AKfycbyor9fJ8ls-zXMFBkvswygRua38RsIphGHtukiwIW6OG9JkatchBxTFpN3JTL1OztXa/exec'",
+                      10
+                    );
                   },
                 }).then((result) => {
                   /* Read more about handling dismissals below
@@ -548,44 +524,45 @@
     </script>
 
     <script>
-      const btnKirimLpj = document.querySelector(".btn-kirimLPJ");
+      const scriptURLLPJ = "https://script.google.com/macros/s/AKfycby6C57Id6Nz7qW5ByLraeWiBnGjhbXqMAIEtDyvpf_46SNWmKBGNDG4h4gPYAl6vsgg/exec";
+      const formLPJ = document.forms["lpj-rat-2022"];
+
+      const btnKirimLpj = document.querySelector(".btn-kirim-lpj");
       const btnLoadingLpj = document.querySelector(".btn-loading-lpj");
       const alertKirimLpj = document.querySelector(".alert-kirim-lpj");
       const formLpj = document.querySelector(".form-lpj");
       var delayInMillisecond = 3000;
 
-      document.getElementById("588911364").value = localStorage.getItem("nama");
+      document.getElementById("namalpj").value = localStorage.getItem("nama");
 
-      $("#bootstrapForm").submit(function (event) {
-        if (document.getElementById("588911364").value === localStorage.getItem("nama")) {
-          event.preventDefault();
+      formLPJ.addEventListener("submit", (e) => {
+        if (document.getElementById("namalpj").value === localStorage.getItem("nama")) {
+          e.preventDefault();
           // button loading
           btnKirimLpj.classList.toggle("d-none");
           btnLoadingLpj.classList.toggle("d-none");
-          var extraData = {};
-          $("#bootstrapForm").ajaxSubmit({
-            data: extraData,
-            dataType: "jsonp", // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
-            error: function () {
-              // Submit of form should be successful but JSONP callback will fail because Google Forms
-              // does not support it, so this is handled as a failure.
+
+          fetch(scriptURLLPJ, { method: "POST", body: new FormData(formLPJ) })
+            .then((response) => {
+              console.log("Success!", response);
               btnKirimLpj.classList.toggle("d-none");
               btnLoadingLpj.classList.toggle("d-none");
-              //alertKirimLpj.classList.toggle("d-none");
+              //alertKirim.classList.toggle("d-none");
               btnKirimLpj.disabled = true;
-              formLpj.reset();
-              //alert("Terima Kasih atas responnya, Page ini akan close");
+              //reset form
+              formLPJ.reset();
+              //alert
               Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Terima Kasih, Response anda telah tersimpan",
+                title: "Response LPJ Telah tersimpan",
                 showConfirmButton: false,
                 timer: 2000,
               });
 
               setTimeout(function () {
                 Swal.fire({
-                  title: "Anda akan di arahkan ke halaman Login",
+                  title: "Anda akan di arahkan ke halaman Voting LPJ",
                   html: "It will close in <b></b> milliseconds.",
                   timer: 3000,
                   timerProgressBar: true,
@@ -603,19 +580,63 @@
                   },
                   willClose: () => {
                     clearInterval(timerInterval);
-                    setTimeout("location.href='index.html'", 10);
+                    setTimeout(
+                      "location.href='https://script.google.com/macros/s/AKfycbz4Q1_UVw85mugu-qVGwOvQy4RdwmBL_PqPaOt4YfDJ51HFneRVgtKpmNXwqwIqajkObQ/exec'",
+                      10
+                    );
                   },
                 }).then((result) => {
-                  /* Read more about handling dismissals below 
+                  /* Read more about handling dismissals below
               if (result.dismiss === Swal.DismissReason.timer) {
-                console.log('I was closed by the timer') 
+                console.log('I was closed by the timer')
               } */
                 });
               }, 2000);
-              // You can also redirect the user to a custom thank-you page:
-              // window.location = 'http://www.mydomain.com/thankyoupage.html'
-            },
-          });
+            })
+            .catch((error) => {
+              console.error("Error!", error.message);
+              Swal.fire({
+                icon: "error",
+                title: "Oops ...",
+                text: "Anda Sudah Mengisi Response !",
+                footer: "<a href>Cek Response LPJ</a>",
+              });
+              setTimeout(function () {
+                Swal.fire({
+                  title: "Anda akan di arahkan ke halaman Voting LPJ",
+                  html: "It will close in <b></b> milliseconds.",
+                  timer: 3000,
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading();
+                    timerInterval = setInterval(() => {
+                      const content = Swal.getContent();
+                      if (content) {
+                        const b = content.querySelector("b");
+                        if (b) {
+                          b.textContent = Swal.getTimerLeft();
+                        }
+                      }
+                    }, 100);
+                  },
+                  willClose: () => {
+                    clearInterval(timerInterval);
+                    setTimeout(
+                      "location.href='https://script.google.com/macros/s/AKfycbz4Q1_UVw85mugu-qVGwOvQy4RdwmBL_PqPaOt4YfDJ51HFneRVgtKpmNXwqwIqajkObQ/exec'",
+                      10
+                    );
+                  },
+                }).then((result) => {
+                  /* Read more about handling dismissals below
+              if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+              } */
+                });
+              }, 2000);
+              //alertGagal.classList.toggle("d-none");
+              //btnKirim.classList.toggle("d-none");
+              //btnLoading.classList.toggle("d-none");
+            });
         } else {
           Swal.fire({
             icon: "error",
@@ -626,6 +647,7 @@
         }
       });
     </script>
+
     <script>
       function myH1() {
         const namaDaftar = document.querySelector(".nama-daftar");
