@@ -1402,5 +1402,8 @@ function save() {
   } else if (inputUsername.value === "7906016JA") {
     inputNama.value = "YAN SUPRAYOGI";
     localStorage.setItem("nama", inputNama.value);
+  } else if (inputUsername.value === "9419087ZJY") {
+    inputNama.value = "DANY DWI JAKA SUDRAJAT";
+    localStorage.setItem("nama", inputNama.value);
   }
 }
