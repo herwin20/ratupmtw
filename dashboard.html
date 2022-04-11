@@ -96,28 +96,20 @@
           <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
           <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div> -->
+        <div class="container">
+          <div class="row justify-content-md-center">
+            <div class="col col-lg-4">
+              <center><h1 id="jumlah">20</h1>
+              <h2>Jumlah Peserta Telah Hadir</h2></center>
+            </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
     <!-- End #header -->
 
     <main id="main">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col col-lg-2">
-            <iframe
-              width="178"
-              height="166"
-              seamless
-              frameborder="0"
-              scrolling="no"
-              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTly3LuPHJKGYqV8YRYQ41ekAHOfETxEx8NmtiIUbdzQCdQ1bSYGG3MUABy6l23gHvfS-7I3R_qvD8L/pubchart?oid=1087379587&amp;format=interactive"
-            ></iframe>
-          </div>
-          <div class="col col-lg-4">
-            <h3>Jumlah Peserta Telah Hadir</h3>
-          </div>
-        </div>
-      </div>
       <!-- ======= About Us Section ======= 
       <section id="about" class="about">
         <div class="container">
@@ -781,6 +773,19 @@
           return false;
         }
       }; */
+    </script>
+
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var myObj = JSON.parse(this.responseText);
+          document.getElementById("jumlah").innerHTML = myObj[0]["count "] ;
+          console.log(myObj[0]["count "]);
+        }
+      };
+      xmlhttp.open("GET", "https://script.google.com/macros/s/AKfycbxocCWBFs154htOAYLymIjo1LtkdnZyduyaxStZLAqhRM1PugVTgwykgO_VYjTMFjUstg/exec", true);
+      xmlhttp.send();
     </script>
   </body>
 </html>
