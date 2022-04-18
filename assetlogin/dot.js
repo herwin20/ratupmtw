@@ -470,7 +470,9 @@ angular.module("AdminLogin", []).controller("LoginAdmin", function ($scope) {
       ($scope.username === "8308134JA" && $scope.password === "8308134") || //	WAN VARIANI PERMATASARI
       ($scope.username === "7906016JA" && $scope.password === "7906016") || //	YAN SUPRAYOGI
       //------------------------------------Daftar Baru-------------------------------------------------------
-      ($scope.username === "9419087ZJY" && $scope.password === "9419087") // DANY DWI JAKA SUDRAJAT
+      ($scope.username === "9419087ZJY" && $scope.password === "9419087") || // DANY DWI JAKA SUDRAJAT
+      ($scope.username === "9519103ZJY" && $scope.password === "9519103") || // DHIKA KURNIA RYANTA ADHA
+      ($scope.username === "9619069ZJY" && $scope.password === "9619069") // DWI RIZKY FITRIYANTO
     ) {
       $scope.login1 = "Anda berhasil login...";
       Swal.fire("Selamat Datang " + $scope.username, "RAT Koperasi Online 2022", "success");

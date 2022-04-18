@@ -1405,5 +1405,11 @@ function save() {
   } else if (inputUsername.value === "9419087ZJY") {
     inputNama.value = "DANY DWI JAKA SUDRAJAT";
     localStorage.setItem("nama", inputNama.value);
+  } else if (inputUsername.value === "9519103ZJY") {
+    inputNama.value = "DHIKA KURNIA RYANTA ADHA";
+    localStorage.setItem("nama", inputNama.value);
+  } else if (inputUsername.value === "9619069ZJY") {
+    inputNama.value = "DWI RIZKY FITRIYANTO";
+    localStorage.setItem("nama", inputNama.value);
   }
 }
