@@ -57,7 +57,7 @@
         <h1>Selamat Datang di RAT Koperasi Online</h1>
         <h2>Daftarkan diri anda dan menangkan banyak doorprize serta souvenir yg menarik !</h2>
         <b id="waktu">Waktu Penerimaan LPJ ditutup</b>
-        <div class="countdown d-flex justify-content-center" data-count="2022/4/21 15:00:00">
+        <div class="countdown d-flex justify-content-center" data-count="2022/4/25 15:00:00">
           <div>
             <h3>%d</h3>
             <h4>Days</h4>
@@ -99,7 +99,7 @@
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col col-lg-4">
-              <center><h1 id="jumlah">20</h1>
+              <center><h1 id="jumlah">-</h1>
               <h2>Jumlah Peserta Telah Hadir</h2></center>
             </div>
             </div>
@@ -695,13 +695,13 @@
       } else {
         document.getElementById("btn-kirimLPJ").disabled = false;
       } */
-      /*
-      let timeActivated = new Date("Maret 12, 2022 06:00:00").getTime();
-      let timeDeActivated = new Date("Maret 12, 2021 9:30:00").getTime();
+      
+      let timeActivated = new Date("April 25, 2022 08:00:00").getTime();
+      let timeDeActivated = new Date("April 25, 2022 09:30:00").getTime();
       let currTime = Date.now();
 
-      let timeActivatedLPJ = new Date("April 21, 2021 10:00:00").getTime();
-      let timeDeActivatedLPJ = new Date("April 21, 2021 15:00:00").getTime();
+      let timeActivatedLPJ = new Date("April 25, 2022 10:00:00").getTime();
+      let timeDeActivatedLPJ = new Date("April 25, 2022 15:00:00").getTime();
 
       const tabDaftar = document.querySelector(".pills-home-tab");
       const tabLPJ = document.querySelector(".pills-profile-tab");
@@ -709,9 +709,10 @@
       document.getElementById("btn-absen").disabled = true;
       document.getElementById("btn-kirimLPJ").disabled = true;
 
-      if (currTime > timeActivated && currTime < timeDeActivated) {
+      if ((currTime > timeActivated && currTime < timeDeActivated) || (localStorage.getItem("nid") === "admin" && localStorage.getItem("nama") === "admin"  )) {
         //write code activated Button
         document.getElementById("btn-absen").disabled = false;
+        document.getElementById("waktu").innerHTML = "Sekarang Periode Absensi";
       } else if (currTime < timeActivated) {
         setTimeout(() => {
           // write code to activated button
@@ -724,9 +725,10 @@
         }, timeActivated - currTime);
       }
 
-      if (currTime > timeActivatedLPJ && currTime < timeDeActivatedLPJ) {
+      if ((currTime > timeActivatedLPJ && currTime < timeDeActivatedLPJ) || (localStorage.getItem("nid") === "admin" && localStorage.getItem("nama") === "admin"  )) {
         // Write code activated Button
         document.getElementById("btn-kirimLPJ").disabled = false;
+        document.getElementById("waktu").innerHTML = "Sekarang Periode Pengisian LPJ";
         tabLPJ.classList.toggle("active");
         tabDaftar.classList.toggle("active");
       } else if (currTime < timeDeActivatedLPJ) {
@@ -739,7 +741,7 @@
             document.getElementById("btn-kirimLPJ").disabled = true;
           }, timeDeActivatedLPJ - Date.now());
         }, timeActivatedLPJ - currTime);
-      } */
+      }
     </script>
 
     <!--Start of Tawk.to Script-->
