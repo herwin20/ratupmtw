@@ -103,6 +103,14 @@
               <h2>Jumlah Peserta Telah Hadir</h2></center>
             </div>
             </div>
+            <div class="row justify-content-md-center">
+              <center>
+                <a href="https://drive.google.com/file/d/1Pxpl5gepqkm6zx0bTjuF8s3sEWx55tim/view?usp=sharing"><img src="assets/img/pdf.png" style="padding-top: 0.5rem;" alt="" height="60dp" width="50dp"></a>
+                <br>
+                <br>
+                <h2>Laporan LPJ Tahun 2021</h2>
+              </center>
+            </div>
           </div>
         </div>
       </div>
@@ -145,6 +153,7 @@
           <div class="section-title">
             <h2 class="nama-daftar">Pendaftaran Peserta RAT Online</h2>
             <h2 class="nama-lpj d-none">Data Penerimaan / Penolakan LPJ</h2>
+            <h2 class="nama-tanya d-none">Pengajuan Pertanyaan Seputar LPJ</h2>
           </div>
 
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -161,7 +170,7 @@
                 aria-selected="true"
                 style="color: rgb(255, 255, 255)"
               >
-                Daftar
+                Absensi
               </button>
             </li>
             <li class="nav-item" role="presentation">
@@ -182,17 +191,18 @@
             </li>
             <li class="nav-item" role="presentation">
               <button
-                class="nav-link d-none"
+                class="nav-link"
                 id="pills-contact-tab"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-contact"
                 type="button"
                 role="tab"
+                onclick="myH3()"
                 aria-controls="pills-contact"
                 aria-selected="false"
                 style="color: rgb(255, 255, 255)"
               >
-                Voting
+                Pengajuan Pertanyaan
               </button>
             </li>
           </ul>
@@ -221,6 +231,8 @@
                     </div>
                     <div class="text-center" style="padding: 2rem">
                       <button class="btn-kirim" id="btn-absen" type="submit">Send Data</button>
+                      <a id="imageabsensi" src="assets/img/cancel.png" alt="" height="40dp" width="40dp"></a>
+                      <p style="padding-top: 1rem;">Periode Absensi 25 April Jam 08:00 - 09.30</p>
                       <button class="btn btn-primary btn-loading d-none" type="btn-new" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Loading...
@@ -270,6 +282,8 @@
                     </div>
                     <div class="text-center" style="padding: 2rem">
                       <button class="btn-kirim-lpj" id="btn-kirimLPJ" type="submit">Send Data</button>
+                      <a id="imagelpj" src="assets/img/cancel.png" alt="" height="40dp" width="40dp"></a>
+                      <p style="padding-top: 1rem;">Periode Penerimaan LPJ 25 April Jam 10:00 - 15:00</p>
                       <button class="btn btn-primary btn-loading-lpj d-none" type="btn-new-lpj" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Loading...
@@ -283,67 +297,67 @@
                 </div>
               </div>
             </div>
+
             <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
               <div class="row">
-                <div class="col-lg-5 d-flex align-items-stretch">
-                  <div class="info">
-                    <div class="address">
-                      <i class="bi bi-geo-alt"></i>
-                      <h4>Location:</h4>
-                      <p>A108 Adam Street, New York, NY 535022</p>
-                    </div>
-
-                    <div class="email">
-                      <i class="bi bi-envelope"></i>
-                      <h4>Email:</h4>
-                      <p>info@example.com</p>
-                    </div>
-
-                    <div class="phone">
-                      <i class="bi bi-phone"></i>
-                      <h4>Call:</h4>
-                      <p>+1 5589 55488 55s</p>
-                    </div>
-
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                      frameborder="0"
-                      style="border: 0; width: 100%; height: 290px"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                </div>
-
-                <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                  <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <div class="col mt-5 mt-lg-0 d-flex align-items-stretch">
+                  <form name="pertanyaan-2022" class="php-email-form">
                     <div class="row">
                       <div class="form-group col-md-6">
-                        <label for="name">Your Name</label>
-                        <input type="text" name="name" class="form-control" id="name" required />
+                        <label for="name">Nama</label>
+                        <input type="text" id="namapertanyaan" name="Nama" class="form-control" required />
                       </div>
                       <div class="form-group col-md-6 mt-3 mt-md-0">
-                        <label for="name">Your Email</label>
-                        <input type="email" class="form-control" name="email" id="email" required />
+                        <label for="name">NID</label>
+                        <input type="text" class="form-control" id="nidpertanyaan" name="NID" required />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-md-6 mt-3 mt-md-0">
+                        <label for="name">Pertanyaan Ke ?</label>
+                        <div class="form-group">
+                          <select id="status" name="Jumlah Pertanyaan" class="form-control">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6 mt-3 mt-md-0">
+                        <label for="name">Jenis Pertanyaan ?</label>
+                        <div class="form-group">
+                          <select id="terima" name="Jenis Pertanyaan" class="form-control">
+                            <option value="Pertanyaan">Pertanyaan</option>
+                            <option value="Saran">Saran</option>
+                            <option value="Usulan">Usulan</option>
+                            <option value="Kritik">Kritik</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                     <div class="form-group mt-3">
-                      <label for="name">Subject</label>
-                      <input type="text" class="form-control" name="subject" id="subject" required />
+                      <label for="name">Silahkan Ajukan Pertanyaan Anda</label>
+                      <textarea class="form-control" id="alamatpertanyaan" name="Pertanyaan" rows="5" required></textarea>
                     </div>
-                    <div class="form-group mt-3">
-                      <label for="name">Message</label>
-                      <textarea class="form-control" name="message" rows="10" required></textarea>
+                    <div class="text-center" style="padding: 2rem">
+                      <button class="btn-kirim-pertanyaan" id="btn-absen-pertanyaan" type="submit">Kirim Pertanyaan</button>
+                      <p style="padding-top: 1rem;">Pertanyaan Saudara (Max 3) akan dijawab Oleh Pengurus Koperasi 2 - 5 Hari Kerja</p>
+                      <a href="https://script.google.com/macros/s/AKfycbz3pu5u8I8hL7Ea5uZmCbfqZAUlScH1QEhPN4jA_oO783aYTbeQopwQpvIZWpnsP87E/exec" class="btn btn-success"type="submit">Lihat Jawaban</a>
+                      <button class="btn btn-primary btn-loading-pertanyaan d-none" type="btn-new" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Loading...
+                      </button>
                     </div>
-                    <div class="my-3">
-                      <div class="loading">Loading</div>
-                      <div class="error-message"></div>
-                      <div class="sent-message">Your message has been sent. Thank you!</div>
+                    <div class="alert alert-success alert-dismissible fade show d-none alert-kirim-pertanyaan" role="alert">
+                      <strong>Terima Kasih !</strong> Data Kehadiran Anda telah tersimpan
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
                   </form>
                 </div>
               </div>
             </div>
+           
+
           </div>
         </div>
       </section>
@@ -658,19 +672,160 @@
     </script>
 
     <script>
+      const ScriptURLPertanyaan = "https://script.google.com/macros/s/AKfycbzEzXvWQLseqUhxR7xB8zoyTWiIoV_JMi5ohMyzxNoT0Qdy2JqMVzAHoSLypQbkIcHtxQ/exec";
+      const formPertanyaan = document.forms["pertanyaan-2022"];
+      const btnKirimPertanyaan = document.querySelector(".btn-kirim-pertanyaan");
+      const btnLoadingPertanyaan = document.querySelector(".btn-loading-pertanyaan");
+      const alertKirimPertanyaan = document.querySelector(".alert-kirim-pertanyaan");
+      //const formpertanyaan = document.querySelector(".form-pertanyaan");
+      var delayInMillisecond = 3000;
+
+      document.getElementById("namapertanyaan").value = localStorage.getItem("nama");
+      document.getElementById("nidpertanyaan").value = localStorage.getItem("nid");
+
+      formPertanyaan.addEventListener("submit", (e) => {
+        if (NID.value === localStorage.getItem("nid") && document.getElementById("nama").value === localStorage.getItem("nama")) {
+          e.preventDefault();
+          // button loading
+          btnKirimPertanyaan.classList.toggle("d-none");
+          btnLoadingPertanyaan.classList.toggle("d-none");
+
+          fetch(ScriptURLPertanyaan, { method: "POST", body: new FormData(formPertanyaan) })
+            .then((response) => {
+              console.log("Success!", response);
+              btnKirimPertanyaan.classList.toggle("d-none");
+              btnLoadingPertanyaan.classList.toggle("d-none");
+              //alertKirim.classList.toggle("d-none");
+              btnKirimPertanyaan.disabled = true;
+              //reset form
+              formPertanyaan.reset();
+              //alert
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Terima Kasih, Pertanyaan Anda telah tersimpan",
+                showConfirmButton: false,
+                timer: 2000,
+              });
+
+              setTimeout(function () {
+                Swal.fire({
+                  title: "Anda akan di arahkan ke halaman List Pertanyaan",
+                  html: "It will close in <b></b> milliseconds.",
+                  timer: 3000,
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading();
+                    timerInterval = setInterval(() => {
+                      const content = Swal.getContent();
+                      if (content) {
+                        const b = content.querySelector("b");
+                        if (b) {
+                          b.textContent = Swal.getTimerLeft();
+                        }
+                      }
+                    }, 100);
+                  },
+                  willClose: () => {
+                    clearInterval(timerInterval);
+                    setTimeout(
+                      "location.href='https://script.google.com/macros/s/AKfycbz3pu5u8I8hL7Ea5uZmCbfqZAUlScH1QEhPN4jA_oO783aYTbeQopwQpvIZWpnsP87E/exec'",
+                      10
+                    );
+                  },
+                }).then((result) => {
+                  /* Read more about handling dismissals below
+              if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+              } */
+                });
+              }, 2000);
+            })
+            .catch((error) => {
+              console.error("Error!", error.message);
+              Swal.fire({
+                icon: "error",
+                title: "Oops ...",
+                text: "Anda Sudah Mengajukan 3 Pertanyaan !",
+                footer: "<a href>Cek Response LPJ</a>",
+              });
+              setTimeout(function () {
+                Swal.fire({
+                  title: "Anda akan di arahkan ke halaman List Pertanyaan",
+                  html: "It will close in <b></b> milliseconds.",
+                  timer: 3000,
+                  timerProgressBar: true,
+                  didOpen: () => {
+                    Swal.showLoading();
+                    timerInterval = setInterval(() => {
+                      const content = Swal.getContent();
+                      if (content) {
+                        const b = content.querySelector("b");
+                        if (b) {
+                          b.textContent = Swal.getTimerLeft();
+                        }
+                      }
+                    }, 100);
+                  },
+                  willClose: () => {
+                    clearInterval(timerInterval);
+                    setTimeout(
+                      "location.href='https://script.google.com/macros/s/AKfycbz3pu5u8I8hL7Ea5uZmCbfqZAUlScH1QEhPN4jA_oO783aYTbeQopwQpvIZWpnsP87E/exec'",
+                      10
+                    );
+                  },
+                }).then((result) => {
+                  /* Read more about handling dismissals below
+              if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+              } */
+                });
+              }, 2000);
+              //alertGagal.classList.toggle("d-none");
+              //btnKirim.classList.toggle("d-none");
+              //btnLoading.classList.toggle("d-none");
+            });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops ...",
+            text: "Nama anda tidak sesuai Login !",
+            footer: "<a href>Harap menghubungi panitia, Terima Kasih</a>",
+          });
+        }
+          
+      });
+
+    </script>
+
+    <script>
       function myH1() {
         const namaDaftar = document.querySelector(".nama-daftar");
         const namaLpj = document.querySelector(".nama-lpj");
+        const namaTanya = document.querySelector(".nama-tanya");
         namaDaftar.classList.remove("d-none");
         namaLpj.classList.add("d-none");
+        namaTanya.classList.add("d-none");
       }
 
       function myH2() {
         const namaDaftar = document.querySelector(".nama-daftar");
         const namaLpj = document.querySelector(".nama-lpj");
+        const namaTanya = document.querySelector(".nama-tanya");
         namaDaftar.classList.add("d-none");
         namaLpj.classList.remove("d-none");
+        namaTanya.classList.add("d-none");
       }
+
+      function myH3() {
+        const namaDaftar = document.querySelector(".nama-daftar");
+        const namaLpj = document.querySelector(".nama-lpj");
+        const namaTanya = document.querySelector(".nama-tanya");
+        namaDaftar.classList.add("d-none");
+        namaLpj.classList.add("d-none");
+        namaTanya.classList.remove("d-none");
+      }
+      
     </script>
 
     <script>
@@ -705,14 +860,20 @@
 
       const tabDaftar = document.querySelector(".pills-home-tab");
       const tabLPJ = document.querySelector(".pills-profile-tab");
+      const img2 = "<img src='assets/img/cancel.png' alt='' height='40dp' width='40dp'>";
+      const imglpjcancel = "<img src='assets/img/cancel.png' alt='' height='40dp' width='40dp'>";
 
       document.getElementById("btn-absen").disabled = true;
       document.getElementById("btn-kirimLPJ").disabled = true;
+      document.getElementById("imageabsensi").innerHTML = img2;
+      document.getElementById("imagelpj").innerHTML = imglpjcancel;
 
       if ((currTime > timeActivated && currTime < timeDeActivated) || (localStorage.getItem("nid") === "admin" && localStorage.getItem("nama") === "admin"  )) {
         //write code activated Button
+        const img = "<img src='assets/img/ok.png' alt='' height='40dp' width='40dp'>";
         document.getElementById("btn-absen").disabled = false;
         document.getElementById("waktu").innerHTML = "Sekarang Periode Absensi";
+        document.getElementById("imageabsensi").innerHTML = img;
       } else if (currTime < timeActivated) {
         setTimeout(() => {
           // write code to activated button
@@ -727,8 +888,10 @@
 
       if ((currTime > timeActivatedLPJ && currTime < timeDeActivatedLPJ) || (localStorage.getItem("nid") === "admin" && localStorage.getItem("nama") === "admin"  )) {
         // Write code activated Button
+        const imglpjok = "<img src='assets/img/ok.png' alt='' height='40dp' width='40dp'>";
         document.getElementById("btn-kirimLPJ").disabled = false;
-        document.getElementById("waktu").innerHTML = "Sekarang Periode Pengisian LPJ";
+        document.getElementById("imagelpj").innerHTML = imglpjok;
+        //document.getElementById("waktu").innerHTML = "Sekarang Periode Pengisian LPJ";
         tabLPJ.classList.toggle("active");
         tabDaftar.classList.toggle("active");
       } else if (currTime < timeDeActivatedLPJ) {
