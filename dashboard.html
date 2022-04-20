@@ -7,6 +7,16 @@
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
+    <script type="text/javascript">
+      function preventBack() {
+        window.history.forward();
+      }
+      setTimeout("preventBack()", 0);
+      window.onunload = function () {
+        null;
+      };
+    </script>
+
     <!-- Favicons -->
     <link href="assets/img/benscoicon.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -52,10 +62,12 @@
     <!-- ======= Header ======= -->
     <header id="header" class="d-flex align-items-center">
       <div class="container d-flex flex-column align-items-center">
-        <h1>Hi, Bapak / Ibu</h1>
-        <h1 id="hi">Username</h1>
-        <h1>Selamat Datang di RAT Koperasi Online</h1>
-        <h2>Daftarkan diri anda dan menangkan banyak doorprize serta souvenir yg menarik !</h2>
+        <center>
+          <h1>Hi, Bapak / Ibu</h1>
+          <h1 id="hi">Username</h1>
+          <h1>Selamat Datang di RAT Koperasi Online</h1>
+          <h2>Daftarkan diri anda dan menangkan banyak doorprize serta souvenir yg menarik !</h2>
+        </center>
         <b id="waktu">Waktu Penerimaan LPJ ditutup</b>
         <div class="countdown d-flex justify-content-center" data-count="2022/4/25 15:00:00">
           <div>
@@ -99,18 +111,21 @@
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col col-lg-4">
-              <center><h1 id="jumlah">-</h1>
-              <h2>Jumlah Peserta Telah Hadir</h2></center>
-            </div>
-            </div>
-            <div class="row justify-content-md-center">
               <center>
-                <a href="https://drive.google.com/file/d/1Pxpl5gepqkm6zx0bTjuF8s3sEWx55tim/view?usp=sharing"><img src="assets/img/pdf.png" style="padding-top: 0.5rem;" alt="" height="60dp" width="50dp"></a>
-                <br>
-                <br>
-                <h2>Laporan LPJ Tahun 2021</h2>
+                <h1 id="jumlah">-</h1>
+                <h2>Jumlah Peserta Telah Hadir</h2>
               </center>
             </div>
+          </div>
+          <div class="row justify-content-md-center">
+            <center>
+              <a href="https://drive.google.com/file/d/1Pxpl5gepqkm6zx0bTjuF8s3sEWx55tim/view?usp=sharing"
+                ><img src="assets/img/pdf.png" style="padding-top: 0.5rem" alt="" height="60dp" width="50dp"
+              /></a>
+              <br />
+              <br />
+              <h2>Laporan RAT Tahun 2021</h2>
+            </center>
           </div>
         </div>
       </div>
@@ -202,7 +217,7 @@
                 aria-selected="false"
                 style="color: rgb(255, 255, 255)"
               >
-                Pengajuan Pertanyaan
+                Pertanyaan
               </button>
             </li>
           </ul>
@@ -232,7 +247,7 @@
                     <div class="text-center" style="padding: 2rem">
                       <button class="btn-kirim" id="btn-absen" type="submit">Send Data</button>
                       <a id="imageabsensi" src="assets/img/cancel.png" alt="" height="40dp" width="40dp"></a>
-                      <p style="padding-top: 1rem;">Periode Absensi 25 April Jam 08:00 - 09.30</p>
+                      <p style="padding-top: 1rem">Periode Absensi 25 April Jam 08:00 - 09.30</p>
                       <button class="btn btn-primary btn-loading d-none" type="btn-new" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Loading...
@@ -283,7 +298,7 @@
                     <div class="text-center" style="padding: 2rem">
                       <button class="btn-kirim-lpj" id="btn-kirimLPJ" type="submit">Send Data</button>
                       <a id="imagelpj" src="assets/img/cancel.png" alt="" height="40dp" width="40dp"></a>
-                      <p style="padding-top: 1rem;">Periode Penerimaan LPJ 25 April Jam 10:00 - 15:00</p>
+                      <p style="padding-top: 1rem">Periode Penerimaan LPJ 25 April Jam 10:00 - 15:00</p>
                       <button class="btn btn-primary btn-loading-lpj d-none" type="btn-new-lpj" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Loading...
@@ -341,8 +356,24 @@
                     </div>
                     <div class="text-center" style="padding: 2rem">
                       <button class="btn-kirim-pertanyaan" id="btn-absen-pertanyaan" type="submit">Kirim Pertanyaan</button>
-                      <p style="padding-top: 1rem;">Pertanyaan Saudara (Max 3) akan dijawab Oleh Pengurus Koperasi 2 - 5 Hari Kerja</p>
-                      <a href="https://script.google.com/macros/s/AKfycbz3pu5u8I8hL7Ea5uZmCbfqZAUlScH1QEhPN4jA_oO783aYTbeQopwQpvIZWpnsP87E/exec" class="btn btn-success"type="submit">Lihat Jawaban</a>
+                      <p style="padding-top: 1rem">Pertanyaan Saudara (Max 3) akan dijawab Oleh Pengurus Koperasi</p>
+                      <div class="row justify-content-md-center">
+                        <div class="col-6">
+                          <p>Pertanyaan</p>
+                          <h3 id="jumtanya">-</h3>
+                        </div>
+                        <div class="col-6">
+                          <p>Sudah Dijawab</p>
+                          <h3 id="jumjawab">-</h3>
+                        </div>
+                      </div>
+                      <br />
+                      <a
+                        href="https://script.google.com/macros/s/AKfycbz3pu5u8I8hL7Ea5uZmCbfqZAUlScH1QEhPN4jA_oO783aYTbeQopwQpvIZWpnsP87E/exec"
+                        class="btn btn-success"
+                        type="submit"
+                        >Lihat Jawaban</a
+                      >
                       <button class="btn btn-primary btn-loading-pertanyaan d-none" type="btn-new" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Loading...
@@ -356,8 +387,6 @@
                 </div>
               </div>
             </div>
-           
-
           </div>
         </div>
       </section>
@@ -793,9 +822,7 @@
             footer: "<a href>Harap menghubungi panitia, Terima Kasih</a>",
           });
         }
-          
       });
-
     </script>
 
     <script>
@@ -825,7 +852,6 @@
         namaLpj.classList.add("d-none");
         namaTanya.classList.remove("d-none");
       }
-      
     </script>
 
     <script>
@@ -850,7 +876,7 @@
       } else {
         document.getElementById("btn-kirimLPJ").disabled = false;
       } */
-      
+
       let timeActivated = new Date("April 25, 2022 08:00:00").getTime();
       let timeDeActivated = new Date("April 25, 2022 09:30:00").getTime();
       let currTime = Date.now();
@@ -868,7 +894,7 @@
       document.getElementById("imageabsensi").innerHTML = img2;
       document.getElementById("imagelpj").innerHTML = imglpjcancel;
 
-      if ((currTime > timeActivated && currTime < timeDeActivated) || (localStorage.getItem("nid") === "admin" && localStorage.getItem("nama") === "admin"  )) {
+      if ((currTime > timeActivated && currTime < timeDeActivated) || (localStorage.getItem("nid") === "admin" && localStorage.getItem("nama") === "admin")) {
         //write code activated Button
         const img = "<img src='assets/img/ok.png' alt='' height='40dp' width='40dp'>";
         document.getElementById("btn-absen").disabled = false;
@@ -886,7 +912,10 @@
         }, timeActivated - currTime);
       }
 
-      if ((currTime > timeActivatedLPJ && currTime < timeDeActivatedLPJ) || (localStorage.getItem("nid") === "admin" && localStorage.getItem("nama") === "admin"  )) {
+      if (
+        (currTime > timeActivatedLPJ && currTime < timeDeActivatedLPJ) ||
+        (localStorage.getItem("nid") === "admin" && localStorage.getItem("nama") === "admin")
+      ) {
         // Write code activated Button
         const imglpjok = "<img src='assets/img/ok.png' alt='' height='40dp' width='40dp'>";
         document.getElementById("btn-kirimLPJ").disabled = false;
@@ -942,14 +971,40 @@
 
     <script>
       var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
+      xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
           var myObj = JSON.parse(this.responseText);
-          document.getElementById("jumlah").innerHTML = myObj[0]["count "] ;
+          document.getElementById("jumlah").innerHTML = myObj[0]["count "];
           //console.log(myObj[0]["count "]);
         }
       };
       xmlhttp.open("GET", "https://script.google.com/macros/s/AKfycbxocCWBFs154htOAYLymIjo1LtkdnZyduyaxStZLAqhRM1PugVTgwykgO_VYjTMFjUstg/exec", true);
+      xmlhttp.send();
+    </script>
+
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var jumtanya = JSON.parse(this.responseText);
+          document.getElementById("jumtanya").innerHTML = jumtanya[0]["count "];
+          //console.log(myObj[0]["count "]);
+        }
+      };
+      xmlhttp.open("GET", "https://script.google.com/macros/s/AKfycbxmyYp9ZJWPLc2vjmz2dwb3p8Med7XT0gJi0F9Y1E3p5ysljZnah0JeMAXJnFybBFWG/exec", true);
+      xmlhttp.send();
+    </script>
+
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var jumjawab = JSON.parse(this.responseText);
+          document.getElementById("jumjawab").innerHTML = jumjawab[0]["count "];
+          //console.log(myObj[0]["count "]);
+        }
+      };
+      xmlhttp.open("GET", "https://script.google.com/macros/s/AKfycbwgcu0H0J20CwcL9Z-e_n2ROKNL5g5PkCTt-J2FztWpxn66WUaIWr79bwRkYKd8avfsLQ/exec", true);
       xmlhttp.send();
     </script>
   </body>
