@@ -26,6 +26,8 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" rel="stylesheet" />
 
     <!-- Sweet Alert-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css" />
@@ -133,34 +135,89 @@
     <!-- End #header -->
 
     <main id="main">
-      <!-- ======= About Us Section ======= 
+      <!-- ======= About Us Section ======= -->
       <section id="about" class="about">
         <div class="container">
           <div class="section-title">
-            <h2>About Us</h2>
-            <p>Illo velit quae dolorem voluptate pireda notila set. Corrupti voluptatum tempora iste ratione deleniti corrupti nostrum ut</p>
+            <h2>DETAIL SIMPANAN</h2>
           </div>
-
-          <div class="row mt-2">
-            <div class="col-lg-4 col-md-6 icon-box">
-              <div class="icon"><i class="bi bi-briefcase"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-            <div class="col-lg-4 col-md-6 icon-box">
-              <div class="icon"><i class="bi bi-bar-chart"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-            <div class="col-lg-4 col-md-6 icon-box">
-              <div class="icon"><i class="bi bi-brightness-high"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+          <div class="container-fluid">
+            <div class="header-body">
+              <div class="row">
+                <div class="col-xl-3 col-lg-6">
+                  <div class="card card-stats mb-4 mb-xl-0">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h5 class="card-title text-uppercase text-muted mb-0">Pokok</h5>
+                          <span id="pokok" class="h4 font-weight-bold mb-0" style="color: #32325d">-</span>
+                        </div>
+                        <div class="col-auto">
+                          <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                            <i class="fas fa-dollar-sign"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-6">
+                  <div class="card card-stats mb-4 mb-xl-0">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h5 class="card-title text-uppercase text-muted mb-0">Wajib</h5>
+                          <span id="wajib" class="h4 font-weight-bold mb-0" style="color: #32325d">-</span>
+                        </div>
+                        <div class="col-auto">
+                          <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                            <i class="fas fa-dollar-sign"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-6">
+                  <div class="card card-stats mb-4 mb-xl-0">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h5 class="card-title text-uppercase text-muted mb-0">Sukarela</h5>
+                          <span id="sukarela" class="h4 font-weight-bold mb-0" style="color: #32325d">-</span>
+                        </div>
+                        <div class="col-auto">
+                          <div class="icon icon-shape bg-success text-white rounded-circle shadow">
+                            <i class="fas fa-dollar-sign"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-6">
+                  <div class="card card-stats mb-4 mb-xl-0">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <h5 class="card-title text-uppercase text-muted mb-0">Jumlah</h5>
+                          <span id="total" class="h4 font-weight-bold mb-0" style="color: #32325d">-</span>
+                        </div>
+                        <div class="col-auto">
+                          <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                            <i class="fas fa-percent"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-       End About Us Section -->
+      <!-- End About Us Section -->
 
       <!-- ======= Contact Us Section ======= -->
       <section id="contact" class="contact">
@@ -1005,6 +1062,26 @@
         }
       };
       xmlhttp.open("GET", "https://script.google.com/macros/s/AKfycbwgcu0H0J20CwcL9Z-e_n2ROKNL5g5PkCTt-J2FztWpxn66WUaIWr79bwRkYKd8avfsLQ/exec", true);
+      xmlhttp.send();
+    </script>
+
+    <script>
+      let namaAnggota = localStorage.getItem("nama");
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var dataAnggota = JSON.parse(this.responseText);
+          var detail = dataAnggota.find((detail) => detail.NAMA === namaAnggota);
+
+          document.getElementById("pokok").innerHTML = "Rp. " + detail.POKOK.toLocaleString("en-US");
+          document.getElementById("wajib").innerHTML = "Rp. " + detail.WAJIB.toLocaleString("en-US");
+          document.getElementById("sukarela").innerHTML = "Rp. " + detail.SUKARELA.toLocaleString("en-US");
+          document.getElementById("total").innerHTML = "Rp. " + detail.JUMLAH.toLocaleString("en-US");
+
+          console.log(detail);
+        }
+      };
+      xmlhttp.open("GET", "https://script.google.com/macros/s/AKfycbxCBEZpF-I3BLeooi6aFY1kFHAJ2a6ZDm5iNk6LasbbF252mJJc4RXktYWUKxJdHto/exec", true);
       xmlhttp.send();
     </script>
   </body>
