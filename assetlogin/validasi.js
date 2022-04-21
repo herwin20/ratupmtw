@@ -868,7 +868,7 @@ function save() {
     localStorage.setItem("nama", inputNama.value);
     //------------------------------------------------------------------------------------------------
   } else if (inputUsername.value === "5679128K3") {
-    inputNama.value = "A. RACHMANSYAH	";
+    inputNama.value = "A. RACHMANSYAH";
     localStorage.setItem("nama", inputNama.value);
   } else if (inputUsername.value === "5576149K3") {
     inputNama.value = "ACHMAD SYIFA";
