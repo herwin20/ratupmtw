@@ -139,7 +139,8 @@
       <section id="about" class="about">
         <div class="container">
           <div class="section-title">
-            <h2>DETAIL SIMPANAN</h2>
+            <h2>DETAIL SIMPANAN KOPERASI</h2>
+            <h2 id="namaAnggota">-</h2>
           </div>
           <div class="container-fluid">
             <div class="header-body">
@@ -1077,6 +1078,7 @@
           document.getElementById("wajib").innerHTML = "Rp. " + detail.WAJIB.toLocaleString("en-US");
           document.getElementById("sukarela").innerHTML = "Rp. " + detail.SUKARELA.toLocaleString("en-US");
           document.getElementById("total").innerHTML = "Rp. " + detail.JUMLAH.toLocaleString("en-US");
+          document.getElementById("namaAnggota").innerHTML = detail.NAMA;
 
           console.log(detail);
         }
